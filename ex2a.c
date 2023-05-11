@@ -14,14 +14,12 @@ int main() {
     pthread_t tarefa;
     int teste;
 
-    // Cria a tarefa
     teste = pthread_create(&tarefa, NULL, escrever_zero, NULL);
     if (teste != 0){
         perror("Erro ao criar a tarefa\n");
         return 1;
     }
 
-    // Aguarda a conclusão da tarefa
     teste = pthread_join(tarefa, NULL);
     if (teste != 0){
         perror("Erro ao aguardar a conclusão da tarefa\n");
