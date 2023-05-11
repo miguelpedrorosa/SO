@@ -33,7 +33,7 @@ int main() {
         }
     }
 
-    printf("Todas as tarefas concluídas com sucesso\n");
+    printf("Todas as tarefas concluídas com sucesso.\n");
 
     return 0;
 }
