@@ -2,10 +2,14 @@
 #include <pthread.h>
 
 #define MAX_TAREFAS 10
+#define VEZES 80
 
 void *print_numero(void *arg) {
     int numero = *(int *)arg;
-    printf("%d\n", numero);
+    for(int i = 0; i < VEZES; i++){
+        printf("%d", numero);
+    }
+    printf("\n");
     return NULL;
 }
 
@@ -33,7 +37,7 @@ int main() {
         }
     }
 
-    printf("Todas as tarefas concluídas com sucesso.\n");
+    printf("Todas as tarefas concluídas com sucesso\n");
 
     return 0;
 }
