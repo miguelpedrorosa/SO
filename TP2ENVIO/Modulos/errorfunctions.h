@@ -1,0 +1,1 @@
+int sys_check_and_exit(int code, char *msg);
