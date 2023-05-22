@@ -32,12 +32,12 @@ int main()
         int *pt = malloc(sizeof(int));
         if (pt == NULL)
         {
-            printf("Failed to alocate memory\n");
+            printf("Failed to allocate memory\n");
         }
 
         *pt = client_socket;
-        int thread = pthread_create(&thread, NULL, thHandleClient, pt);
-        if (thread != 0)
+        int result = pthread_create(&thread, NULL, thHandleClient, pt);
+        if (result != 0)
         {
             printf("Failed to create thread\n");
             free(pt);
