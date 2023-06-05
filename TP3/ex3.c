@@ -111,13 +111,13 @@ void *countdown_thread(void *arg)
 {
     countdown_t *cd = (countdown_t *)arg;
 
-    printf("Thread %ld starting...\n", pthread_self());
+    printf("Threads starting...\n");
 
-    // Simulate different processing times for each thread
+    // Simular tempos diferentes para cada thread
     sleep(rand() % 5 + 1);
 
     countdown_down(cd);
-    printf("Thread %ld finished. Countdown: value = %d\n", pthread_self(), cd->value);
+    printf("Thread %d is waiting.\n", cd->value);
 
     pthread_exit(NULL);
 }
@@ -144,9 +144,11 @@ int main(int argc, char *argv[])
 
     countdown_wait(&cd);
 
+
     for (int i = 0; i < nthreads; i++)
     {
         pthread_join(threads[i], NULL);
+        printf("All threads are done\n");
     }
 
     countdown_destroy(&cd);
